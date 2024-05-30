@@ -314,14 +314,21 @@
                                     Users</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html"
-                                aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
-                                    class="hide-menu">Widgets</span></a>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('classes.index') }}" aria-expanded="false"><i
+                                    class="mdi mdi-chart-bubble"></i><span class="hide-menu">Manage Class</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html"
-                                aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Tables</span></a>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('subjects.index') }}" aria-expanded="false"><i
+                                    class="mdi mdi-border-inside"></i><span class="hide-menu">Manage
+                                    Subjects</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('complaints.index') }}" aria-expanded="false"><i
+                                    class="mdi mdi-border-inside"></i><span class="hide-menu">Manage
+                                    Complaints</span></a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html"
@@ -553,6 +560,9 @@
     <script src="../assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script> --}}
     {{-- <script src="../dist/js/pages/chart/chart-page-init.js"></script> --}}
+
+    @yield('add-scripts')
+
 </body>
 
 </html>

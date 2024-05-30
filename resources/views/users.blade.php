@@ -4,74 +4,8 @@
     Users
 @endpush
 
-@section('head-links')
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-@endsection
 
 @section('add-btn')
-    {{-- <div class="container complain-form mt-3">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Add
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">
-                            Complain Form
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body ">
-                        <form class="d-flex flex-column align-items-start">
-                            <div class="mb-3 mt-3 d-flex flex-column align-items-start">
-                                <label for="title" class="form-label">Complain Title</label>
-                                <input type="text" class="form-control" id="title" aria-describedby="emailHelp" />
-                                <div id="titleHelp" class="form-text">
-                                    Your complain will be treated with utmost care.
-                                </div>
-                            </div>
-                            <div class="mb-3 d-flex flex-column align-items-start ">
-                                <label for="summernote" class="form-label">Complain Letter</label>
-                                <div id="summernote"></div>
-                                <script>
-                                    $("#summernote").summernote({
-                                        placeholder: "Write your complain here",
-                                        tabsize: 2,
-                                        height: 120,
-                                        toolbar: [
-                                            ["style", ["style"]],
-                                            ["font", ["bold", "underline", "clear"]],
-                                            ["color", ["color"]],
-                                            ["para", ["ul", "ol", "paragraph"]],
-                                            ["table", ["table"]],
-                                            ["insert", ["link", "picture", "video"]],
-                                            ["view", ["fullscreen", "codeview", "help"]],
-                                        ],
-                                        name: "complain",
-                                    });
-                                </script>
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                Submit Complain
-                            </button>
-                        </form>
-
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Add User
@@ -103,7 +37,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-floating mb-3">
-                                    <input type="date" class="form-control" id="floatingInput"
+                                    <input type="date" class="form-control  nepali-datepicker" id="floatingInput"
                                         placeholder="Date of Birth" />
                                     <label for="floatingInput">Date of Birth</label>
                                 </div>
@@ -135,7 +69,7 @@
                         </div>
                         <div class="form-floating mb-3">
                             <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option selected>Select your role...</option>
+                                <option selected>Select user's role...</option>
                                 <option value="1">Stduent</option>
                                 <option value="2">Staff</option>
                                 <option value="3">Guardians</option>
@@ -172,18 +106,24 @@
                             <th>Email</th>
                             <th>Gender</th>
                             <th>DOB</th>
-                            <th>DOB</th>
+                            <th>Actions </th>
 
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td>Shyam Kumar Mandal</td>
+                            <td>Biratnagar</td>
+                            <td>9800000000</td>
+                            <td>shaym@hotmail.com</td>
+                            <td>Male</td>
+                            <td>3rd Jan 2000</td>
+                            <td>
+                                <div class="btn btn-sm btn-primary">Update</div>
+                                <div class="btn btn-sm btn-danger">Delete</div>
+
+                            </td>
+
                         </tr>
 
                     </tbody>
@@ -201,4 +141,17 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('add-scripts')
+    <script src="{{ url('nepaliDatePicker/script.js') }}"></script>
+
+    {{-- <script>
+        $('.nepali-datepicker').nepaliDatePicker();
+    </script> --}}
+
+    {{-- jquery cdn  --}}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    {{-- jquery cdn  --}}
 @endsection
