@@ -15,7 +15,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
     <!-- Custom CSS -->
-    <link href="{{ url('css/dashboard/float-chat.css') }}" rel="stylesheet" />
+    <link href="{{ url('css/dashboard/float-chart.css') }}" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="{{ url('css/dashboard/style.min.css') }}" rel="stylesheet" />
 
@@ -29,9 +29,12 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    @yield('head-links')
+
 </head>
 
-<body>
+<body dir="ltr">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -55,7 +58,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ route('home') }}">
                         <!-- Logo icon -->
                         <b class="logo-icon ps-2">
                             <!-- Dark Logo icon -->
@@ -87,7 +90,7 @@
                     <ul class="navbar-nav float-start me-auto">
                         <li class="nav-item d-none d-lg-block">
                             <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
-                                data-sidebartype="mini-sidebar">Hey there</a>
+                                data-sidebartype="mini-sidebar"> School Name English Boarding School </a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- create new -->
@@ -255,8 +258,8 @@
                   "
                                 href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <img src="../assets/images/users/1.jpg" alt="user" class="rounded-circle"
-                                    width="31" />
+                                <img src="{{ url('images/default-user.webp') }}" alt="user"
+                                    class="rounded-circle" width="31" />
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated"
                                 aria-labelledby="navbarDropdown">
@@ -305,8 +308,9 @@
                                     class="hide-menu">Dashboard</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
-                                aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Manage
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('users.index') }}" aria-expanded="false"><i
+                                    class="mdi mdi-chart-bar"></i><span class="hide-menu">Manage
                                     Users</span></a>
                         </li>
                         <li class="sidebar-item">
@@ -475,16 +479,11 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">
+                            @stack('page-title')
+                        </h4>
                         <div class="ms-auto text-end">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">
-                                        Library
-                                    </li>
-                                </ol>
-                            </nav>
+                            @yield('add-btn')
                         </div>
                     </div>
                 </div>
@@ -500,6 +499,7 @@
                 <!-- Sales Cards  -->
                 <!-- ============================================================== -->
 
+                @yield('content')
 
                 <!-- ============================================================== -->
                 <!-- Recent comment and chats -->
@@ -512,8 +512,10 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by
-                <a href="https://www.wrappixel.com">WrapPixel</a>.
+                All Rights Reserved by Matin TechSoft. Designed and Developed by
+                <a target="_blank" href="https://prakashtajpuriya.com.np">Prakash</a>.
+                <a href="https://prakashtajpuriya.com.np">Mamata</a>.
+                <a href="https://prakashtajpuriya.com.np">Karan</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
