@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('users');
+        $page_name = "Students";
+        $students = [];
+
+        return view('users',compact('page_name','students'));
+
     }
 
     /**
@@ -35,7 +39,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('student_detail', compact('id'));
     }
 
     /**

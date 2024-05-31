@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ParentController;
+
 
 
 Route::get('/', function () {
@@ -12,7 +15,13 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::resource('users', UserController::class);
+Route::resource('staffs', StaffController::class);
+
+
+Route::resource('parents', ParentController::class);
+
+
+Route::resource('students', StudentController::class);
 
 
 Route::resource('classes', ClassController::class);

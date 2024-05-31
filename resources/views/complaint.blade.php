@@ -24,7 +24,6 @@
 
 @section('add-btn')
     <div class="container complain-form mt-3">
-        <!-- Button trigger modal -->
         @php
             $is_school_admin = false;
         @endphp
@@ -33,7 +32,6 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Add Complaint
             </button>
-            <small>Disable this button for admin in production</small>
         @endif
 
         <!-- Modal -->
