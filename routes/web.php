@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\SubjectController;
@@ -10,24 +13,7 @@ use App\Http\Controllers\ParentController;
 
 
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
-
-Route::resource('staffs', StaffController::class);
-
-
-Route::resource('parents', ParentController::class);
-
-
-Route::resource('students', StudentController::class);
-
-
-Route::resource('classes', ClassController::class);
-
-
-Route::resource('subjects', SubjectController::class);
-
-
-Route::resource('complaints', ComplaintController::class);
+Route::get('/login', function () {
+    echo "login";
+})->name('login');
